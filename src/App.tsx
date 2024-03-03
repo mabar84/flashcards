@@ -5,9 +5,9 @@ export function App() {
     <div>
       Hello
       <Button as={'a'} href={'/link'} variant={'secondary'}>
-        First
+        First1
       </Button>
-      <Button variant={'secondary'}>Second</Button>
+      <Button variant={'secondary'}>Second2</Button>
     </div>
   )
 }
