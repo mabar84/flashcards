@@ -1,40 +1,40 @@
-import { ChangeEvent, InputHTMLAttributes, useState } from 'react';
+import { ChangeEvent, InputHTMLAttributes, forwardRef, useState } from 'react'
 
-import { Close } from '@/assets/icons/Close';
-import { Eye } from '@/assets/icons/Eye/Eye';
-import { Search } from '@/assets/icons/Search';
-import { clsx } from 'clsx';
+import { Close } from '@/assets/icons/Close'
+import { Eye } from '@/assets/icons/Eye/Eye'
+import { Search } from '@/assets/icons/Search'
+import { clsx } from 'clsx'
 
-import s from './Input.module.scss';
+import s from './Input.module.scss'
 
-import { Typography } from '../Typography';
+import { Typography } from '../Typography'
 
 type Props = {
-  error?: string;
-  labelValue?: string;
-  typeValue?: 'password' | 'search';
-} & InputHTMLAttributes<HTMLInputElement>;
+  error?: string
+  labelValue?: string
+  typeValue?: 'password' | 'search'
+} & InputHTMLAttributes<HTMLInputElement>
 
-export const Input = (props: Props) => {
-  const { disabled, error, labelValue, typeValue, ...otherProps } = props;
+export const Input = forwardRef<HTMLInputElement, Props>((props: Props, ref) => {
+  const { disabled, error, labelValue, typeValue, ...otherProps } = props
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
 
-  const typePassword = typeValue === 'password';
-  const typeSearch = typeValue === 'search';
+  const typePassword = typeValue === 'password'
+  const typeSearch = typeValue === 'search'
 
   const classNames = {
     input: clsx(s.input, error && s.error, typePassword && s.password, typeSearch && s.search),
     label: clsx(s.label, disabled && s.disabled),
-  };
+  }
 
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
+    setInputValue(e.target.value)
+  }
 
   const handleClickClose = () => {
-    setInputValue('');
-  };
+    setInputValue('')
+  }
 
   return (
     <div className={s.inputWrapper}>
@@ -50,7 +50,8 @@ export const Input = (props: Props) => {
           className={classNames.input}
           disabled={disabled}
           onChange={handleChangeInput}
-          value={inputValue}
+          ref={ref}
+          // value={inputValue}
           {...otherProps}
           id={labelValue}
         />
@@ -62,5 +63,5 @@ export const Input = (props: Props) => {
 
       {error && <Typography.Caption className={s.errorText}>{error}</Typography.Caption>}
     </div>
-  );
-};
+  )
+})
