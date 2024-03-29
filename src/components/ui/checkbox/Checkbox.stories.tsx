@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { CheckedMark } from '@/assets/icons/CheckedMark/CheckedMark';
-import { Typography } from '@/components/ui/Typography';
+import { CheckedMark } from '@/assets/icons/CheckedMark/CheckedMark'
+import { Typography } from '@/components/ui/Typography'
 
-import { Checkbox } from './Checkbox';
+import { Checkbox } from './Checkbox'
 
 const meta = {
   component: Checkbox,
   tags: ['autodocs'],
   title: 'Components/Checkbox',
-} satisfies Meta<typeof Checkbox>;
+} satisfies Meta<typeof Checkbox>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const BaseCheckbox: Story = {
   args: {
@@ -23,11 +23,11 @@ export const BaseCheckbox: Story = {
   },
 
   render: ({ checked, icon }) => {
-    const [displayValue, setDisplayValue] = useState(true);
+    const [displayValue, setDisplayValue] = useState(true)
 
     const onCheckedChange = (value: boolean) => {
-      setDisplayValue(value);
-    };
+      setDisplayValue(value)
+    }
 
     return (
       <>
@@ -37,19 +37,19 @@ export const BaseCheckbox: Story = {
           displayValue ? 'checked' : 'unchecked'
         }`}</Typography.Caption>
       </>
-    );
+    )
   },
-};
+}
 export const DisabledCheckedCheckbox: Story = {
   args: {
     checked: true,
     disabled: true,
     icon: <CheckedMark />,
   },
-};
+}
 export const DisabledUncheckedCheckbox: Story = {
   args: {
     disabled: true,
     icon: <CheckedMark />,
   },
-};
+}
