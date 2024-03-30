@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react'
 
 import { Indicator, Root } from '@radix-ui/react-checkbox'
 import clsx from 'clsx'
@@ -9,7 +9,7 @@ type Props = {
   icon?: ReactNode
   isChecked?: boolean
 } & ComponentPropsWithoutRef<typeof Root>
-export const Checkbox = (props: Props) => {
+export const Checkbox = forwardRef<HTMLButtonElement, Props>((props: Props, ref) => {
   const { checked, className, disabled, icon, id, ...restProps } = props
   const classNames = clsx(s.CheckboxRoot, className)
 
@@ -20,8 +20,9 @@ export const Checkbox = (props: Props) => {
       defaultChecked={checked}
       disabled={disabled}
       id={id}
+      ref={ref}
     >
       <Indicator>{icon}</Indicator>
     </Root>
   )
-}
+})

@@ -2,15 +2,19 @@ import { useController, useForm } from 'react-hook-form'
 
 import { CheckedMark } from '@/assets/icons/CheckedMark'
 import { Input } from '@/components/ui/Input'
+import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
-import { Button } from '../../ui/button'
+const loginSchema = z.object({
+  email: z.string().min(1),
+  // email: z.string().email(),
+  password: z.string().min(3).max(5),
+  rememberMe: z.literal(true),
+})
 
-type FormValues = {
-  email: string
-  password: string
-  rememberMe: boolean
-}
+type FormValues = z.infer<typeof loginSchema>
 
 export const LoginForm = () => {
   const {
@@ -18,44 +22,35 @@ export const LoginForm = () => {
     formState: { errors },
     handleSubmit,
     register,
-  } = useForm<FormValues>()
+  } = useForm<FormValues>({
+    resolver: zodResolver(loginSchema),
+  })
 
   const onSubmit = (data: FormValues) => {
     console.log(data)
   }
 
   const {
-    field: { onChange, value },
+    field: { onChange, ref, value },
   } = useController({
     control,
-    defaultValue: false,
+    // defaultValue: false,
     name: 'rememberMe',
   })
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        {...register('email', {
-          pattern: { message: 'Invalid email', value: emailRegex },
-          required: 'Email is required',
-        })}
-        error={errors.email?.message}
-        labelValue={'email'}
+      <Input {...register('email')} error={errors.email?.message} labelValue={'email'} />
+      <Input {...register('password')} error={errors.password?.message} labelValue={'password'} />
+      <Checkbox
+        checked={value}
+        icon={<CheckedMark />}
+        name={'rememberMe'}
+        onCheckedChange={onChange}
+        ref={ref}
       />
-      <Input
-        {...register('password', {
-          minLength: { message: 'Password has to be at least 3 characters long', value: 3 },
-          required: 'Password is required',
-        })}
-        error={errors.password?.message}
-        labelValue={'password'}
-      />
-      <Checkbox checked={value} icon={<CheckedMark />} onCheckedChange={onChange} />
 
       <Button type={'submit'}>Submit</Button>
     </form>
   )
 }
-
-const emailRegex =
-  /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/
