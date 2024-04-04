@@ -11,7 +11,7 @@ const loginSchema = z.object({
   email: z.string().min(1),
   // email: z.string().email(),
   password: z.string().min(3).max(5),
-  rememberMe: z.literal(true),
+  rememberMe: z.any(),
 })
 
 type FormValues = z.infer<typeof loginSchema>
@@ -34,7 +34,7 @@ export const LoginForm = () => {
     field: { onChange, ref, value },
   } = useController({
     control,
-    // defaultValue: false,
+    defaultValue: false,
     name: 'rememberMe',
   })
 
