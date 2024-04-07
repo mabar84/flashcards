@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { FormCheckbox } from '@/components/FormCheckbox/FormCheckbox'
 import { Input } from '@/components/ui/Input'
 import { Button } from '@/components/ui/button'
+import { DevTool } from '@hookform/devtools'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
@@ -21,9 +22,11 @@ export const LoginForm = () => {
     handleSubmit,
     register,
   } = useForm<FormValues>({
+    delayError: 2000,
     resolver: zodResolver(loginScheme),
   })
 
+  console.log(errors)
   const onSubmit = (data: FormValues) => {
     console.log(data)
   }
@@ -36,6 +39,7 @@ export const LoginForm = () => {
       <FormCheckbox control={control} defaultValue name={'rememberMe'} />
 
       <Button type={'submit'}>Submit</Button>
+      <DevTool control={control} />
     </form>
   )
 }
