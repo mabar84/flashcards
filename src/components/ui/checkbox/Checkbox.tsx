@@ -6,24 +6,28 @@ import clsx from 'clsx'
 
 import s from './Checkbox.module.scss'
 
-type Props = {
+export type CheckboxProps = {
+  errorMessage?: string
   icon?: ReactNode
   isChecked?: boolean
 } & ComponentPropsWithoutRef<typeof Root>
-export const Checkbox = forwardRef<HTMLButtonElement, Props>((props: Props, ref) => {
-  const { checked, className, disabled, icon, id, ...restProps } = props
-  const classNames = clsx(s.CheckboxRoot, className)
+export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
+  (props: CheckboxProps, ref) => {
+    const { checked, className, disabled, errorMessage, icon, id, ...restProps } = props
+    const classNames = clsx(s.CheckboxRoot, className)
 
-  return (
-    <Root
-      {...restProps}
-      className={classNames}
-      defaultChecked={checked}
-      disabled={disabled}
-      id={id}
-      ref={ref}
-    >
-      <Indicator>{icon ? icon : <CheckedMark />}</Indicator>
-    </Root>
-  )
-})
+    return (
+      <Root
+        {...restProps}
+        className={classNames}
+        defaultChecked={checked}
+        disabled={disabled}
+        id={id}
+        ref={ref}
+      >
+        <Indicator>{icon ? icon : <CheckedMark />}</Indicator>
+        <p>{errorMessage}</p>
+      </Root>
+    )
+  }
+)

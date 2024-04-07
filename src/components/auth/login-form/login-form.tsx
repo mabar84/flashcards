@@ -8,9 +8,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 const loginScheme = z.object({
-  email: z.string().email(),
+  email: z.string(),
   password: z.string().min(3),
-  rememberMe: z.boolean().optional(),
+  rememberMe: z.boolean(),
+  // rememberMe: z.boolean().optional(),
 })
 
 type FormValues = z.infer<typeof loginScheme>
@@ -36,7 +37,7 @@ export const LoginForm = () => {
       <Input {...register('email')} error={errors.email?.message} labelValue={'email'} />
       <Input {...register('password')} error={errors.password?.message} labelValue={'password'} />
 
-      <FormCheckbox control={control} defaultValue name={'rememberMe'} />
+      <FormCheckbox control={control} errorMessage={'123'} name={'rememberMe'} />
 
       <Button type={'submit'}>Submit</Button>
       <DevTool control={control} />
