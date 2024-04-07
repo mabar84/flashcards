@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react'
 
+import { CheckedMark } from '@/assets/icons/CheckedMark'
 import { Indicator, Root } from '@radix-ui/react-checkbox'
 import clsx from 'clsx'
 
@@ -22,7 +23,7 @@ export const Checkbox = forwardRef<HTMLButtonElement, Props>((props: Props, ref)
       id={id}
       ref={ref}
     >
-      <Indicator>{icon}</Indicator>
+      <Indicator>{icon ? icon : <CheckedMark />}</Indicator>
     </Root>
   )
 })
