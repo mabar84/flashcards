@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { LogOutIcon } from '@/assets/icons/LogOutIcon';
+import { LogOutIcon } from '@/assets/icons/LogOutIcon'
 
-import { Button } from './Button';
+import { Button } from './Button'
 
 const meta = {
   argTypes: {
@@ -13,10 +13,10 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   title: 'Components/Button',
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Button>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
@@ -27,7 +27,7 @@ export const Primary: Story = {
       </>
     ),
   },
-};
+}
 
 export const Secondary: Story = {
   args: {
@@ -39,7 +39,7 @@ export const Secondary: Story = {
     ),
     variant: 'secondary',
   },
-};
+}
 
 export const FullWidth: Story = {
   args: {
@@ -51,7 +51,7 @@ export const FullWidth: Story = {
     ),
     fullWidth: true,
   },
-};
+}
 export const AsLink: Story = {
   args: {
     as: 'a',
@@ -63,7 +63,7 @@ export const AsLink: Story = {
     ),
     href: 'https://www.google.com/',
   },
-};
+}
 export const AsLinkSecondary: Story = {
   args: {
     as: 'a',
@@ -76,7 +76,7 @@ export const AsLinkSecondary: Story = {
     href: 'https://www.google.com/',
     variant: 'secondary',
   },
-};
+}
 export const AsLinkFullWidth: Story = {
   args: {
     as: 'a',
@@ -88,7 +88,7 @@ export const AsLinkFullWidth: Story = {
     fullWidth: true,
     href: 'https://www.google.com/',
   },
-};
+}
 
 export const DisabledPrimary: Story = {
   args: {
@@ -99,7 +99,7 @@ export const DisabledPrimary: Story = {
     ),
     disabled: true,
   },
-};
+}
 export const DisabledSecondary: Story = {
   args: {
     children: (
@@ -110,7 +110,7 @@ export const DisabledSecondary: Story = {
     disabled: true,
     variant: 'secondary',
   },
-};
+}
 export const AsLinkDisabled: Story = {
   args: {
     as: 'a',
@@ -123,4 +123,4 @@ export const AsLinkDisabled: Story = {
     disabled: true,
     href: 'https://www.google.com/',
   },
-};
+}
