@@ -12,3 +12,5 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {}
+
+export const Swcondary: Story = {}

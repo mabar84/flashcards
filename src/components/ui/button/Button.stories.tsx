@@ -23,7 +23,7 @@ export const Primary: Story = {
     children: (
       <>
         <LogOutIcon />
-        Primary Button Test Vercel
+        Primary Button test 2255
       </>
     ),
   },
