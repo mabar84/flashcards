@@ -23,7 +23,7 @@ export const Primary: Story = {
     children: (
       <>
         <LogOutIcon />
-        Primary Button TEST 2305
+        Primary Button TEST 2306
       </>
     ),
   },
