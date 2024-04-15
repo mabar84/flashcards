@@ -1,1 +1,1 @@
-export { DropdownMenuAvatar } from './DropdownMenuAvatar';
+export { DropdownMenuAvatar } from './DropdownMenuAvatar'
