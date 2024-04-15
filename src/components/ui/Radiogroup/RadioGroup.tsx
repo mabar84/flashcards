@@ -1,16 +1,16 @@
-import { ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef } from 'react'
 
-import { RadioGroupItem, RadioGroupItemProps } from '@/components/ui/Radiogroup/RadiogroupItem';
-import { Root } from '@radix-ui/react-radio-group';
+import { RadioGroupItem, RadioGroupItemProps } from '@/components/ui/Radiogroup/RadiogroupItem'
+import { Root } from '@radix-ui/react-radio-group'
 
-import s from './RadioGroup.module.scss';
+import s from './RadioGroup.module.scss'
 
 type Props = {
-  options: RadioGroupItemProps[];
-} & ComponentPropsWithoutRef<typeof Root>;
+  options: RadioGroupItemProps[]
+} & ComponentPropsWithoutRef<typeof Root>
 
 export const RadioGroup = (props: Props) => {
-  const { options, ...restProps } = props;
+  const { options, ...restProps } = props
 
   return (
     <Root {...restProps} className={s.radioGroupRoot}>
@@ -18,5 +18,5 @@ export const RadioGroup = (props: Props) => {
         <RadioGroupItem {...el} key={el.value} />
       ))}
     </Root>
-  );
-};
+  )
+}

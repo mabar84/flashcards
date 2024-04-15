@@ -1,1 +1,1 @@
-export { ChevronUpIcon } from './ChevronUpIcon';
+export { ChevronUpIcon } from './ChevronUpIcon'
