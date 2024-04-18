@@ -7,10 +7,10 @@ import s from './Search.module.scss'
 type Props = { isError?: boolean } & SVGProps<SVGSVGElement>
 
 export const Search = (props: Props) => {
-  const { isError, ...otherProps } = props
+  const { className, isError, ...otherProps } = props
 
   const cl = {
-    search: clsx(s.search, isError && s.search_error),
+    search: clsx(s.search, isError && s.search_error, className),
   }
 
   return (
@@ -31,7 +31,7 @@ export const Search = (props: Props) => {
       </g>
       <defs>
         <clipPath id={'clip0_5661_1973'}>
-          <rect fill={'white'} height={'24'} width={'24'} />
+          <rect fill={'currentColor'} height={'24'} width={'24'} />
         </clipPath>
       </defs>
     </svg>
