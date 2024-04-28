@@ -1,27 +1,27 @@
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
 
-import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
-import { Typography } from '@/components/ui/Typography'
-import { CheckboxWithController } from '@/components/withControllers/CheckboxWithController'
-import { InputWithController } from '@/components/withControllers/InputWithController'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { Typography } from '@/components/ui/Typography';
+import { CheckboxWithController } from '@/components/withControllers/CheckboxWithController';
+import { InputWithController } from '@/components/withControllers/InputWithController';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
-import s from './LoginForm.module.scss'
+import s from './LoginForm.module.scss';
 
 const loginScheme = z.object({
   email: z.string().email(),
   password: z.string().min(3).max(30),
   rememberMe: z.boolean().optional(),
-})
+});
 
-export type FormValues = z.infer<typeof loginScheme>
+export type FormValues = z.infer<typeof loginScheme>;
 type Props = {
-  onSubmit: (data: FormValues) => void
-}
+  onSubmit: (data: FormValues) => void;
+};
 export const LoginForm = (props: Props) => {
-  const { onSubmit } = props
+  const { onSubmit } = props;
   const { control, handleSubmit } = useForm<FormValues>({
     defaultValues: {
       email: '',
@@ -29,10 +29,10 @@ export const LoginForm = (props: Props) => {
     },
     delayError: 2000,
     resolver: zodResolver(loginScheme),
-  })
+  });
   const onSubmitLogIn = (data: FormValues) => {
-    onSubmit(data)
-  }
+    onSubmit(data);
+  };
 
   return (
     <Card className={s.card}>
@@ -42,35 +42,35 @@ export const LoginForm = (props: Props) => {
         <InputWithController
           containerClassName={s.input}
           control={control}
-          label={'Email'}
-          name={'email'}
+          label="Email"
+          name="email"
         />
         <InputWithController
           containerClassName={s.input}
           control={control}
-          label={'Password'}
-          name={'password'}
-          type={'password'}
+          label="Password"
+          name="password"
+          type="password"
         />
         <CheckboxWithController
           className={s.checkbox}
           control={control}
-          label={'Remember me'}
-          name={'rememberMe'}
+          label="Remember me"
+          name="rememberMe"
         />
-        <Typography.Body2 as={'a'} className={s.forgot}>
+        <Typography.Body2 as="a" className={s.forgot}>
           Forgot Password?
         </Typography.Body2>
-        <Button className={s.signIn} fullWidth type={'submit'}>
+        <Button className={s.signIn} fullWidth type="submit">
           Sign In
         </Button>
-        <Typography.Body2 as={'a'} className={s.dontHaveAccount}>
+        <Typography.Body2 as="a" className={s.dontHaveAccount}>
           {`Don't have an account?`}
         </Typography.Body2>
-        <Typography.Subtitle1 as={'a'} className={s.signUp}>
+        <Typography.Subtitle1 as="a" className={s.signUp}>
           Sign Up
         </Typography.Subtitle1>
       </form>
     </Card>
-  )
-}
+  );
+};
