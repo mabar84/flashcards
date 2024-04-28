@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { LogOutIcon } from '@/assets/icons/LogOutIcon';
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 
 const meta = {
   argTypes: {
@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryExample: Story = {
   args: {
     children: (
       <>
@@ -28,7 +28,7 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const SecondaryExample: Story = {
   args: {
     children: (
       <>

@@ -13,7 +13,6 @@ type Props<T extends ElementType = 'button'> = {
 export const Button = <T extends ElementType = 'button'>(props: Props<T>) => {
   const {
     as: Component = 'button',
-    children,
     className,
     disabled,
     fullWidth,
@@ -29,9 +28,5 @@ export const Button = <T extends ElementType = 'button'>(props: Props<T>) => {
     className
   );
 
-  return (
-    <Component className={classNames} href={href} {...rest}>
-      {children}
-    </Component>
-  );
+  return <Component className={classNames} href={href} {...rest} />;
 };
