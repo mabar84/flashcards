@@ -1,1 +1,0 @@
-export { CheckedCross } from './CheckedCross'
