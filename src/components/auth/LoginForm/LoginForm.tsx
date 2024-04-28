@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 
-import { Button } from '@/components/ui/Button';
+import { Button2 } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Typography } from '@/components/ui/Typography';
 import { CheckboxWithController } from '@/components/withControllers/CheckboxWithController';
@@ -61,9 +61,9 @@ export const LoginForm = (props: Props) => {
         <Typography.Body2 as="a" className={s.forgot}>
           Forgot Password?
         </Typography.Body2>
-        <Button className={s.signIn} fullWidth type="submit">
+        <Button2 className={s.signIn} fullWidth type="submit">
           Sign In
-        </Button>
+        </Button2>
         <Typography.Body2 as="a" className={s.dontHaveAccount}>
           {`Don't have an account?`}
         </Typography.Body2>

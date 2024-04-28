@@ -1,16 +1,16 @@
-import { CheckEmailIcon } from '@/assets/icons/CheckEmail/CheckEmailIcon'
-import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
-import { Typography } from '@/components/ui/Typography'
+import { CheckEmailIcon } from '@/assets/icons/CheckEmail/CheckEmailIcon';
+import { Button2 } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
+import { Typography } from '@/components/ui/Typography';
 
-import s from './CheckEmail.module.scss'
+import s from './CheckEmail.module.scss';
 
 type Props = {
-  backToSignIn: () => void
-  email: string
-}
+  backToSignIn: () => void;
+  email: string;
+};
 export const CheckEmail = (props: Props) => {
-  const { backToSignIn, email } = props
+  const { backToSignIn, email } = props;
 
   return (
     <Card className={s.card}>
@@ -20,9 +20,9 @@ export const CheckEmail = (props: Props) => {
         We’ve sent an Email with instructions to {email}
       </Typography.Body2>
 
-      <Button className={s.send} fullWidth onClick={backToSignIn}>
+      <Button2 className={s.send} fullWidth onClick={backToSignIn}>
         Back to Sign In
-      </Button>
+      </Button2>
     </Card>
-  )
-}
+  );
+};
