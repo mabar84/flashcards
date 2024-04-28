@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { Typography } from '@/components/ui/Typography'
+import { Typography } from '@/components/ui/Typography';
 
-import { RadioGroup } from './RadioGroup'
+import { RadioGroup } from './RadioGroup';
 
 const meta = {
   component: RadioGroup,
   tags: ['autodocs'],
   title: 'Components/RadioGroup',
-} satisfies Meta<typeof RadioGroup>
+} satisfies Meta<typeof RadioGroup>;
 
-export default meta
-type Story = StoryObj<typeof RadioGroup>
+export default meta;
+type Story = StoryObj<typeof RadioGroup>;
 
 export const BaseExample: Story = {
   args: {
@@ -26,17 +26,17 @@ export const BaseExample: Story = {
     ],
   },
   render: ({ options }) => {
-    const [displayValue, setDisplayValue] = useState('empty')
+    const [displayValue, setDisplayValue] = useState('empty');
 
     const onValueChange = (value: string) => {
-      setDisplayValue(value)
-    }
+      setDisplayValue(value);
+    };
 
     return (
       <>
         <Typography.Caption>{`your chose is ${displayValue}`}</Typography.Caption>
         <RadioGroup onValueChange={onValueChange} options={options} />
       </>
-    )
+    );
   },
-}
+};

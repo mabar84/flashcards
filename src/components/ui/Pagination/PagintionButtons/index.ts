@@ -1,1 +1,1 @@
-export { PagintionButtons } from './PagintionButtons'
+export { PagintionButtons } from './PagintionButtons';

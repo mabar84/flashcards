@@ -1,25 +1,25 @@
-import { ComponentPropsWithoutRef, ElementType, FC, ReactNode } from 'react'
+import { ComponentPropsWithoutRef, ElementType, FC, ReactNode } from 'react';
 
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
 
-import s from './Typography.module.scss'
+import s from './Typography.module.scss';
 
 type Props<T extends ElementType> = {
-  as?: ElementType
-  children?: ReactNode
-} & ComponentPropsWithoutRef<T>
+  as?: ElementType;
+  children?: ReactNode;
+} & ComponentPropsWithoutRef<T>;
 
 const createTypographyComponent = <T extends ElementType>(
   basicClassName: Component
 ): FC<Props<T>> => {
   return (props: Props<T>) => {
-    const { as, className, ...restProps } = props
-    const Component = as || COMPONENTS[basicClassName]
-    const classNames = clsx(s[basicClassName], className)
+    const { as, className, ...restProps } = props;
+    const Component = as || COMPONENTS[basicClassName];
+    const classNames = clsx(s[basicClassName], className);
 
-    return <Component className={classNames} {...restProps} />
-  }
-}
+    return <Component className={classNames} {...restProps} />;
+  };
+};
 
 const COMPONENTS = {
   body1: 'p',
@@ -34,7 +34,7 @@ const COMPONENTS = {
   overline: 'p',
   subtitle1: 'p',
   subtitle2: 'p',
-} as const
+} as const;
 
 export const Typography = {
   Body1: createTypographyComponent('body1'),
@@ -49,6 +49,6 @@ export const Typography = {
   Overline: createTypographyComponent('overline'),
   Subtitle1: createTypographyComponent('subtitle1'),
   Subtitle2: createTypographyComponent('subtitle2'),
-}
+};
 
-type Component = keyof typeof COMPONENTS
+type Component = keyof typeof COMPONENTS;
