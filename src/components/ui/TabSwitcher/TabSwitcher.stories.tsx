@@ -1,26 +1,26 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { Typography } from '@/components/ui/Typography'
+import { Typography } from '@/components/ui/Typography';
 
-import { TabSwitcher } from './TabSwitcher'
+import { TabSwitcher } from './TabSwitcher';
 
 const meta = {
   component: TabSwitcher,
   tags: ['autodocs'],
   title: 'Components/TabSwitcher',
-} satisfies Meta<typeof TabSwitcher>
+} satisfies Meta<typeof TabSwitcher>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 const TabSwitcherStates = {
   ACTIVE: 'Active',
   DISABLED: 'Disabled',
   INACTIVE: 'Inactive',
-}
+};
 
 export const TabSwitcherExample: Story = {
   args: {
@@ -41,20 +41,20 @@ export const TabSwitcherExample: Story = {
     ],
   },
   render: ({ tabOptions }) => {
-    const [displayValue, setDisplayValue] = useState('')
+    const [displayValue, setDisplayValue] = useState('');
 
     const onValueChange = (value: string) => {
-      setDisplayValue(value)
-    }
+      setDisplayValue(value);
+    };
 
     return (
       <>
         <TabSwitcher onValueChange={onValueChange} tabOptions={tabOptions} />
         <Typography.Body1>{displayValue}</Typography.Body1>
       </>
-    )
+    );
   },
-}
+};
 
 export const ActiveTab: Story = {
   args: {
@@ -66,9 +66,9 @@ export const ActiveTab: Story = {
     ],
   },
   render: ({ tabOptions }) => {
-    return <TabSwitcher defaultValue={TabSwitcherStates.ACTIVE} tabOptions={tabOptions} />
+    return <TabSwitcher defaultValue={TabSwitcherStates.ACTIVE} tabOptions={tabOptions} />;
   },
-}
+};
 
 export const InactiveTab: Story = {
   args: {
@@ -80,9 +80,9 @@ export const InactiveTab: Story = {
     ],
   },
   render: ({ tabOptions }) => {
-    return <TabSwitcher defaultValue={TabSwitcherStates.ACTIVE} tabOptions={tabOptions} />
+    return <TabSwitcher defaultValue={TabSwitcherStates.ACTIVE} tabOptions={tabOptions} />;
   },
-}
+};
 
 export const DisabledTab: Story = {
   args: {
@@ -95,6 +95,6 @@ export const DisabledTab: Story = {
     ],
   },
   render: ({ tabOptions }) => {
-    return <TabSwitcher tabOptions={tabOptions} />
+    return <TabSwitcher tabOptions={tabOptions} />;
   },
-}
+};

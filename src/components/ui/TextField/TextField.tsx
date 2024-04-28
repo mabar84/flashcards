@@ -1,29 +1,30 @@
-import { ComponentPropsWithoutRef, forwardRef, useState } from 'react'
+import { ComponentPropsWithoutRef, forwardRef, useState } from 'react';
 
-import { Search } from '@/assets/icons/Search'
-import { SwitchingEye } from '@/assets/icons/SwitchingEye/SwitchingEye'
-import { Typography } from '@/components/ui/Typography'
-import { CheckedCross } from '@/components/ui/checkbox/CheckedCross'
-import { clsx } from 'clsx'
+import { Typography } from '@/components/ui/Typography';
+import { clsx } from 'clsx';
 
-import s from './TextField.module.scss'
+import s from './TextField.module.scss';
+
+import { CheckedCross } from './CheckedCross';
+import { Search } from './Search';
+import { SwitchingEye } from './SwitchingEye/SwitchingEye';
 
 export type TextFieldProps = {
-  clearInput?: () => void
-  error?: string
-  label?: string
-  type?: 'password' | 'search' | 'text'
-} & ComponentPropsWithoutRef<'input'>
+  clearInput?: () => void;
+  error?: string;
+  label?: string;
+  type?: 'password' | 'search' | 'text';
+} & ComponentPropsWithoutRef<'input'>;
 
 export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   (props: TextFieldProps, ref) => {
-    const { className, clearInput, disabled, error, label, onChange, type = 'text', value } = props
+    const { className, clearInput, disabled, error, label, onChange, type = 'text', value } = props;
 
-    const [showPassword, setShowPassword] = useState(type === 'text')
-    const showButton = (!!value || type === 'password') && type !== 'text'
-    const showEye = type === 'password'
-    const showSearch = type === 'search'
-    const currentType = showPassword ? 'text' : 'password'
+    const [showPassword, setShowPassword] = useState(type !== 'password');
+    const showButton = (!!value || type === 'password') && type !== 'text';
+    const showEye = type === 'password';
+    const showSearch = type === 'search';
+    const currentType = showPassword ? 'text' : 'password';
     const classNames = {
       button: s.button,
       input: s.input,
@@ -36,17 +37,14 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       searchGlass: s.searchGlass,
       textError: s.textError,
       textField: clsx(s.textField, disabled && s.disabled, className),
-    }
-
-    console.log(classNames.textField)
-
+    };
     const onClickHandler = () => {
       if (type === 'password') {
-        setShowPassword(prev => !prev)
+        setShowPassword(prev => !prev);
       } else {
-        clearInput && clearInput()
+        clearInput && clearInput();
       }
-    }
+    };
 
     return (
       <div className={classNames.textField}>
@@ -69,6 +67,6 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         </div>
         {error && <Typography.Caption className={classNames.textError}>{error}</Typography.Caption>}
       </div>
-    )
+    );
   }
-)
+);
