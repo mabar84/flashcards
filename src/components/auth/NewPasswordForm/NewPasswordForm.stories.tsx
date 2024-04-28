@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { NewPasswordForm } from '.';
-import { NewPasswordFormValues } from './NewPasswordFormValues';
+import { NewPasswordForm } from '.'
+import { NewPasswordFormValues } from './NewPasswordFormValues'
 
 const meta = {
   component: NewPasswordForm,
   tags: ['autodocs'],
   title: 'Auth/NewPasswordForm',
-} satisfies Meta<typeof NewPasswordForm>;
+} satisfies Meta<typeof NewPasswordForm>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const NewPassword: Story = {
   args: {
@@ -22,15 +22,15 @@ export const NewPassword: Story = {
   render: () => {
     const [data, setData] = useState<NewPasswordFormValues>({
       password: '',
-    });
+    })
 
-    const onSubmit = (data: NewPasswordFormValues) => setData(data);
+    const onSubmit = (data: NewPasswordFormValues) => setData(data)
 
     return (
       <>
         <NewPasswordForm onSubmit={onSubmit} />
         {data?.password}
       </>
-    );
+    )
   },
-};
+}

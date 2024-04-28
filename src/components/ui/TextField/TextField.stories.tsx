@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react'
 
-import { Typography } from '../Typography';
-import { TextField } from './TextField';
+import { Typography } from '../Typography'
+import { TextField } from './TextField'
 
 const meta = {
   component: TextField,
   tags: ['autodocs'],
   title: 'Components/TextField',
-} satisfies Meta<typeof TextField>;
+} satisfies Meta<typeof TextField>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const RegularInput: Story = {
   args: {
@@ -21,10 +21,10 @@ export const RegularInput: Story = {
     type: 'text',
   },
   render: ({ label }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
+      setValue(e.target.value)
+    }
 
     return (
       <>
@@ -32,16 +32,16 @@ export const RegularInput: Story = {
         <br />
         <Typography.Body2>{`Now input value is ${value ? value : 'empty'}`}</Typography.Body2>
       </>
-    );
+    )
   },
-};
+}
 
 export const RegularInputDisabled: Story = {
   args: {
     disabled: true,
     label: 'Regular input',
   },
-};
+}
 
 export const InputPassword: Story = {
   args: {
@@ -49,10 +49,10 @@ export const InputPassword: Story = {
     type: 'password',
   },
   render: ({ label, type }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
+      setValue(e.target.value)
+    }
 
     return (
       <>
@@ -60,9 +60,9 @@ export const InputPassword: Story = {
         <br />
         <Typography.Body2>{`Now input value is ${value ? value : 'empty'}`}</Typography.Body2>
       </>
-    );
+    )
   },
-};
+}
 export const InputPasswordWithError: Story = {
   args: {
     error: 'Some error',
@@ -70,10 +70,10 @@ export const InputPasswordWithError: Story = {
     type: 'password',
   },
   render: ({ error, label, type }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
+      setValue(e.target.value)
+    }
 
     return (
       <>
@@ -81,9 +81,9 @@ export const InputPasswordWithError: Story = {
         <br />
         <Typography.Body2>{`Now input value is ${value ? value : 'empty'}`}</Typography.Body2>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputPasswordDisabled: Story = {
   args: {
@@ -91,20 +91,20 @@ export const InputPasswordDisabled: Story = {
     label: 'Input password',
     type: 'password',
   },
-};
+}
 export const InputSearch: Story = {
   args: {
     label: 'Input search',
     type: 'search',
   },
   render: ({ label, type }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
+      setValue(e.target.value)
+    }
     const clearInput = () => {
-      setValue('');
-    };
+      setValue('')
+    }
 
     return (
       <>
@@ -118,9 +118,9 @@ export const InputSearch: Story = {
         <br />
         <Typography.Body2>{`Now input value is ${value ? value : 'empty'}`}</Typography.Body2>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputSearchWithError: Story = {
   args: {
@@ -129,13 +129,13 @@ export const InputSearchWithError: Story = {
     type: 'search',
   },
   render: ({ error, label, type }) => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('')
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setValue(e.target.value);
-    };
+      setValue(e.target.value)
+    }
     const clearInput = () => {
-      setValue('');
-    };
+      setValue('')
+    }
 
     return (
       <>
@@ -150,9 +150,9 @@ export const InputSearchWithError: Story = {
         <br />
         <Typography.Body2>{`Now input value is ${value ? value : 'empty'}`}</Typography.Body2>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputSearchDisabled: Story = {
   args: {
@@ -160,4 +160,4 @@ export const InputSearchDisabled: Story = {
     label: 'Input search',
     type: 'search',
   },
-};
+}

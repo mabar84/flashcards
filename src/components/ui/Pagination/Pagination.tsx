@@ -1,24 +1,24 @@
-import s from './Pagination.module.scss';
+import s from './Pagination.module.scss'
 
-import { PagintionButtons } from './PagintionButtons';
-import { ArrowButton } from './PagintionButtons/ArrowButton';
+import { PagintionButtons } from './PagintionButtons'
+import { ArrowButton } from './PagintionButtons/ArrowButton'
 
 type Props = {
-  currentPage: number;
-  itemsPerPage: number;
-  onValueChange: (currentPage: number) => void;
-  totalPages: number;
-};
+  currentPage: number
+  itemsPerPage: number
+  onValueChange: (currentPage: number) => void
+  totalPages: number
+}
 
 export const Pagination = (props: Props) => {
-  const { currentPage, onValueChange, totalPages } = props;
+  const { currentPage, onValueChange, totalPages } = props
 
   const toPrevPageHandler = () => {
-    onValueChange(currentPage - 1);
-  };
+    onValueChange(currentPage - 1)
+  }
   const toNextPageHandler = () => {
-    onValueChange(currentPage + 1);
-  };
+    onValueChange(currentPage + 1)
+  }
 
   return (
     <div className={s.pagination}>
@@ -30,5 +30,5 @@ export const Pagination = (props: Props) => {
       />
       <ArrowButton disabled={currentPage >= totalPages} onClick={toNextPageHandler} />
     </div>
-  );
-};
+  )
+}

@@ -1,1 +1,1 @@
-export { DropdownItemDivider } from './DropdownItemDivider';
+export { DropdownItemDivider } from './DropdownItemDivider'

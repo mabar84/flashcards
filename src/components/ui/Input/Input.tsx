@@ -6,26 +6,26 @@ import {
   forwardRef,
   useId,
   useState,
-} from 'react';
+} from 'react'
 
-import { Cross } from '@/assets/icons/Cross';
-import { Eye } from '@/assets/icons/Eye/Eye';
-import { EyeOff } from '@/assets/icons/EyeOff';
-import { Search } from '@/assets/icons/Search';
-import { Typography } from '@/components/ui/Typography';
-import { clsx } from 'clsx';
+import { Cross } from '@/assets/icons/Cross'
+import { Eye } from '@/assets/icons/Eye/Eye'
+import { EyeOff } from '@/assets/icons/EyeOff'
+import { Search } from '@/assets/icons/Search'
+import { Typography } from '@/components/ui/Typography'
+import { clsx } from 'clsx'
 
-import s from './Input.module.scss';
+import s from './Input.module.scss'
 
-import { InputButton } from './InputButton';
+import { InputButton } from './InputButton'
 
 export type InputProps = {
-  containerClassName?: string;
-  error?: string;
-  label?: string;
-  onClearInput?: () => void;
-  onValueChange?: (value: string) => void;
-} & ComponentPropsWithoutRef<'input'>;
+  containerClassName?: string
+  error?: string
+  label?: string
+  onClearInput?: () => void
+  onValueChange?: (value: string) => void
+} & ComponentPropsWithoutRef<'input'>
 
 export const Input = forwardRef<ElementRef<'input'>, InputProps>((props: InputProps, ref) => {
   const {
@@ -39,32 +39,32 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>((props: InputPr
     onValueChange,
     type,
     ...inputProps
-  } = props;
+  } = props
 
-  const generatedId = useId();
-  const finalId = id ?? generatedId;
+  const generatedId = useId()
+  const finalId = id ?? generatedId
 
-  const [maskedPassword, setMaskedPassword] = useState(true);
+  const [maskedPassword, setMaskedPassword] = useState(true)
 
   const showPassword = () => {
-    setMaskedPassword(!maskedPassword);
-  };
+    setMaskedPassword(!maskedPassword)
+  }
 
-  const typePassword = type === 'password';
-  const typeSearch = type === 'search';
+  const typePassword = type === 'password'
+  const typeSearch = type === 'search'
 
-  const finalType = getFinalType(type, maskedPassword);
+  const finalType = getFinalType(type, maskedPassword)
 
   const classNames = {
     container: clsx(s.container, disabled && s.disabled, error && s.error, containerClassName),
     field: clsx(s.field, disabled && s.disabled),
     input: clsx(s.input, error && s.error, typePassword && s.password, typeSearch && s.search),
     label: clsx(s.label, disabled && s.disabled),
-  };
+  }
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
-    onChange?.(e);
-    onValueChange?.(e.target.value);
+    onChange?.(e)
+    onValueChange?.(e.target.value)
   }
 
   return (
@@ -77,7 +77,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>((props: InputPr
 
       <div className={classNames.field}>
         {typeSearch && (
-          <InputButton className="search">
+          <InputButton className={'search'}>
             <Search />
           </InputButton>
         )}
@@ -104,13 +104,13 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>((props: InputPr
 
       {error && <Typography.Caption className={s.errorText}>{error}</Typography.Caption>}
     </div>
-  );
-});
+  )
+})
 
 function getFinalType(type: ComponentProps<'input'>['type'], showPassword: boolean) {
   if ((type === 'password' && showPassword) || type === 'search') {
-    return 'text';
+    return 'text'
   }
 
-  return type;
+  return type
 }

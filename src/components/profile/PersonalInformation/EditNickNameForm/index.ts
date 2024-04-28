@@ -1,1 +1,1 @@
-export { EditNickNameForm } from './EditNickNameForm';
+export { EditNickNameForm } from './EditNickNameForm'

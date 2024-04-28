@@ -1,36 +1,36 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react'
 
-import { Input } from '.';
-import { Typography } from '../Typography';
+import { Input } from '.'
+import { Typography } from '../Typography'
 
 const meta = {
   component: Input,
   tags: ['autodocs'],
   title: 'Components/Input',
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Input>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const InputTypeText: Story = {
   render: () => {
-    const [displayValue, setDisplayValue] = useState('');
+    const [displayValue, setDisplayValue] = useState('')
 
     const onValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setDisplayValue(e.target.value);
-    };
+      setDisplayValue(e.target.value)
+    }
 
     return (
       <>
-        <Input label="Input" onChange={onValueChange} value={displayValue} />
+        <Input label={'Input'} onChange={onValueChange} value={displayValue} />
         <Typography.Body1>{displayValue}</Typography.Body1>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputTypeTextError: Story = {
   args: {
@@ -38,31 +38,31 @@ export const InputTypeTextError: Story = {
     label: 'Input',
     value: 'Error!',
   },
-};
+}
 
 export const InputTypeTextDisabled: Story = {
   args: {
     disabled: true,
     label: 'Input',
   },
-};
+}
 
 export const InputTypePassword: Story = {
   render: () => {
-    const [password, setPassword] = useState('');
+    const [password, setPassword] = useState('')
 
     const onValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setPassword(e.target.value);
-    };
+      setPassword(e.target.value)
+    }
 
     return (
       <>
-        <Input label="Input" onChange={onValueChange} type="password" value={password} />
+        <Input label={'Input'} onChange={onValueChange} type={'password'} value={password} />
         <Typography.Body1>{password}</Typography.Body1>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputTypePasswordError: Story = {
   args: {
@@ -71,35 +71,35 @@ export const InputTypePasswordError: Story = {
     type: 'password',
     value: 'Error',
   },
-};
+}
 export const InputTypePasswordDisabled: Story = {
   args: {
     disabled: true,
     label: 'Input',
     type: 'password',
   },
-};
+}
 
 export const InputTypeSearch: Story = {
   render: () => {
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState('')
 
     const onValueChange = (e: ChangeEvent<HTMLInputElement>) => {
-      setSearch(e.target.value);
-    };
+      setSearch(e.target.value)
+    }
 
     const clearSearch = () => {
-      setSearch('');
-    };
+      setSearch('')
+    }
 
     return (
       <>
-        <Input onChange={onValueChange} onClearInput={clearSearch} type="search" value={search} />
+        <Input onChange={onValueChange} onClearInput={clearSearch} type={'search'} value={search} />
         <Typography.Body1>{search}</Typography.Body1>
       </>
-    );
+    )
   },
-};
+}
 
 export const InputTypeSearchError: Story = {
   args: {
@@ -107,11 +107,11 @@ export const InputTypeSearchError: Story = {
     type: 'search',
     value: 'Input search',
   },
-};
+}
 
 export const InputTypeSearchDisabled: Story = {
   args: {
     disabled: true,
     type: 'search',
   },
-};
+}
