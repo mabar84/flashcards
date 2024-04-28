@@ -1,3 +1,3 @@
 export const App = () => {
-  return <div>hello and errors check</div>;
+  return <div>hello</div>;
 };
