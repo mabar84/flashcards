@@ -1,1 +1,1 @@
-export { ModalButton } from './ModalButton'
+export { ModalButton } from './ModalButton';

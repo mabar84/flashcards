@@ -1,19 +1,19 @@
-import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react'
+import { ComponentPropsWithoutRef, ReactNode, forwardRef } from 'react';
 
-import { CheckedMark } from '@/assets/icons/CheckedMark/CheckedMark'
-import { Typography } from '@/components/ui/Typography'
-import { Indicator, Root } from '@radix-ui/react-checkbox'
-import clsx from 'clsx'
+import { CheckedMark } from '@/assets/icons/CheckedMark/CheckedMark';
+import { Typography } from '@/components/ui/Typography';
+import { Indicator, Root } from '@radix-ui/react-checkbox';
+import clsx from 'clsx';
 
-import s from './Checkbox.module.scss'
+import s from './Checkbox.module.scss';
 
 type Props = {
-  icon?: ReactNode
-  label?: string
-} & ComponentPropsWithoutRef<typeof Root>
+  icon?: ReactNode;
+  label?: string;
+} & ComponentPropsWithoutRef<typeof Root>;
 export const Checkbox = forwardRef<HTMLButtonElement, Props>((props: Props, ref) => {
-  const { checked, className, disabled, icon, id, label, ...restProps } = props
-  const classNames = clsx(s.checkbox, disabled && s.disabled, className)
+  const { checked, className, disabled, icon, id, label, ...restProps } = props;
+  const classNames = clsx(s.checkbox, disabled && s.disabled, className);
 
   return (
     <label className={classNames}>
@@ -25,5 +25,5 @@ export const Checkbox = forwardRef<HTMLButtonElement, Props>((props: Props, ref)
 
       {label && <Typography.Body2>{label}</Typography.Body2>}
     </label>
-  )
-})
+  );
+});

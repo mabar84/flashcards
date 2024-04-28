@@ -1,17 +1,17 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { Pagination } from './Pagination'
+import { Pagination } from './Pagination';
 
 const meta = {
   component: Pagination,
   tags: ['autodocs'],
   title: 'Components/Pagination',
-} satisfies Meta<typeof Pagination>
+} satisfies Meta<typeof Pagination>;
 
-export default meta
-type Story = StoryObj<typeof Pagination>
+export default meta;
+type Story = StoryObj<typeof Pagination>;
 
 export const Pagination7: Story = {
   args: {
@@ -20,10 +20,10 @@ export const Pagination7: Story = {
     totalPages: 7,
   },
   render: ({ currentPage, itemsPerPage, totalPages }) => {
-    const [displayValue, setDisplayValue] = useState(currentPage)
+    const [displayValue, setDisplayValue] = useState(currentPage);
     const onValueChange = (currentPage: number) => {
-      setDisplayValue(currentPage)
-    }
+      setDisplayValue(currentPage);
+    };
 
     return (
       <>
@@ -35,9 +35,9 @@ export const Pagination7: Story = {
           totalPages={totalPages}
         />
       </>
-    )
+    );
   },
-}
+};
 export const Pagination12: Story = {
   args: {
     currentPage: 1,
@@ -45,10 +45,10 @@ export const Pagination12: Story = {
     totalPages: 12,
   },
   render: ({ currentPage, itemsPerPage, totalPages }) => {
-    const [displayValue, setDisplayValue] = useState(currentPage)
+    const [displayValue, setDisplayValue] = useState(currentPage);
     const onValueChange = (currentPage: number) => {
-      setDisplayValue(currentPage)
-    }
+      setDisplayValue(currentPage);
+    };
 
     return (
       <>
@@ -60,6 +60,6 @@ export const Pagination12: Story = {
           totalPages={totalPages}
         />
       </>
-    )
+    );
   },
-}
+};

@@ -1,1 +1,1 @@
-export { PaginationButton } from './PaginationButton'
+export { PaginationButton } from './PaginationButton';

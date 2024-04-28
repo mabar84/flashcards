@@ -1,7 +1,7 @@
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef } from 'react';
 
-import { ChevronDownIcon } from '@/assets/icons/ChevronDownIcon'
-import { ChevronUpIcon } from '@/assets/icons/ChevronUpIcon'
+import { ChevronDownIcon } from '@/assets/icons/ChevronDownIcon';
+import { ChevronUpIcon } from '@/assets/icons/ChevronUpIcon';
 import {
   Content,
   Group,
@@ -14,30 +14,30 @@ import {
   Trigger,
   Value,
   Viewport,
-} from '@radix-ui/react-select'
-import clsx from 'clsx'
+} from '@radix-ui/react-select';
+import clsx from 'clsx';
 
-import s from './Select.module.scss'
+import s from './Select.module.scss';
 
-import { Typography } from '../Typography'
-import { SelectItem } from './SelectItem'
-import { SelectItemValue } from './SelectItemValue'
-import { TypographySelector } from './TypographySelector'
+import { Typography } from '../Typography';
+import { SelectItem } from './SelectItem';
+import { SelectItemValue } from './SelectItemValue';
+import { TypographySelector } from './TypographySelector';
 
 type Props = {
-  isSmall?: boolean
-  label: number | string
-  placeholder: string
-  values: SelectItemValue[]
-} & ComponentPropsWithoutRef<typeof Root>
+  isSmall?: boolean;
+  label: number | string;
+  placeholder: string;
+  values: SelectItemValue[];
+} & ComponentPropsWithoutRef<typeof Root>;
 
 export const Select = (props: Props) => {
-  const { disabled, isSmall, label, placeholder, values, ...restProps } = props
+  const { disabled, isSmall, label, placeholder, values, ...restProps } = props;
 
   return (
     <div className={s.selectWrapper}>
       {label && !isSmall && (
-        <Typography.Body2 as={'label'} className={clsx(s.label, disabled && s.disabled)}>
+        <Typography.Body2 as="label" className={clsx(s.label, disabled && s.disabled)}>
           {label}
         </Typography.Body2>
       )}
@@ -75,5 +75,5 @@ export const Select = (props: Props) => {
         </Portal>
       </Root>
     </div>
-  )
-}
+  );
+};

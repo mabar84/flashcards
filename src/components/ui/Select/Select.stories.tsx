@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { ComponentPropsWithoutRef, useState } from 'react'
+import { ComponentPropsWithoutRef, useState } from 'react';
 
-import { Typography } from '../Typography'
-import { Select } from './Select'
+import { Typography } from '../Typography';
+import { Select } from './Select';
 
 const selectData: ComponentPropsWithoutRef<typeof Select> = {
   label: 'Select-box',
@@ -14,7 +14,7 @@ const selectData: ComponentPropsWithoutRef<typeof Select> = {
     { id: 3, value: 'coconut' },
     { id: 4, value: 'banana' },
   ],
-}
+};
 
 const smallSelectData: ComponentPropsWithoutRef<typeof Select> = {
   isSmall: true,
@@ -31,16 +31,16 @@ const smallSelectData: ComponentPropsWithoutRef<typeof Select> = {
     { id: 8, value: '80' },
     { id: 9, value: '90' },
   ],
-}
+};
 
 const meta = {
   component: Select,
   tags: ['autodocs'],
   title: 'Components/Select',
-} satisfies Meta<typeof Select>
+} satisfies Meta<typeof Select>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const BaseSelect: Story = {
   args: {
@@ -49,11 +49,11 @@ export const BaseSelect: Story = {
     values: selectData.values,
   },
   render: ({ label, placeholder, values }) => {
-    const [displayValue, setDisplayValue] = useState('')
+    const [displayValue, setDisplayValue] = useState('');
 
     const onValueChange = (value: string) => {
-      setDisplayValue(value)
-    }
+      setDisplayValue(value);
+    };
 
     return (
       <>
@@ -65,9 +65,9 @@ export const BaseSelect: Story = {
         />
         <Typography.Body1>{displayValue}</Typography.Body1>
       </>
-    )
+    );
   },
-}
+};
 
 export const SelectOpen: Story = {
   args: {
@@ -76,7 +76,7 @@ export const SelectOpen: Story = {
     placeholder: selectData.placeholder,
     values: selectData.values,
   },
-}
+};
 
 export const SelectDisabled: Story = {
   args: {
@@ -85,7 +85,7 @@ export const SelectDisabled: Story = {
     placeholder: selectData.placeholder,
     values: selectData.values,
   },
-}
+};
 
 export const SmallSelect: Story = {
   args: {
@@ -95,11 +95,11 @@ export const SmallSelect: Story = {
     values: smallSelectData.values,
   },
   render: ({ isSmall, label, placeholder, values }) => {
-    const [displayValue, setDisplayValue] = useState('')
+    const [displayValue, setDisplayValue] = useState('');
 
     const onValueChange = (value: string) => {
-      setDisplayValue(value)
-    }
+      setDisplayValue(value);
+    };
 
     return (
       <>
@@ -112,9 +112,9 @@ export const SmallSelect: Story = {
         />
         <Typography.Body1>{displayValue}</Typography.Body1>
       </>
-    )
+    );
   },
-}
+};
 
 export const SmallSelectOpen: Story = {
   args: {
@@ -124,11 +124,11 @@ export const SmallSelectOpen: Story = {
     values: smallSelectData.values,
   },
   render: ({ isSmall, label, placeholder, values }) => {
-    const [displayValue, setDisplayValue] = useState('')
+    const [displayValue, setDisplayValue] = useState('');
 
     const onValueChange = (value: string) => {
-      setDisplayValue(value)
-    }
+      setDisplayValue(value);
+    };
 
     return (
       <>
@@ -142,6 +142,6 @@ export const SmallSelectOpen: Story = {
         />
         <Typography.Body1>{displayValue}</Typography.Body1>
       </>
-    )
+    );
   },
-}
+};

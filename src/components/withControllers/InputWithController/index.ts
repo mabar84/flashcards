@@ -1,1 +1,1 @@
-export * from './InputWithController'
+export * from './InputWithController';

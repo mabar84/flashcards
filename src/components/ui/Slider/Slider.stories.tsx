@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { useState } from 'react'
+import { useState } from 'react';
 
-import { Slider } from './Slider'
+import { Slider } from './Slider';
 
 const meta = {
   component: Slider,
   tags: ['autodocs'],
   title: 'Components/Slider',
-} satisfies Meta<typeof Slider>
+} satisfies Meta<typeof Slider>;
 
-export default meta
+export default meta;
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 export const SliderExample: Story = {
   args: {
@@ -22,11 +22,11 @@ export const SliderExample: Story = {
     min: -50,
   },
   render: ({ defaultValue, delay, max, min }) => {
-    const [range, setRange] = useState<[number, number]>(defaultValue)
+    const [range, setRange] = useState<[number, number]>(defaultValue);
 
     const onValueChange = (value: [number, number]) => {
-      setRange(value)
-    }
+      setRange(value);
+    };
 
     return (
       <>
@@ -41,9 +41,9 @@ export const SliderExample: Story = {
           Range: {range[0]} - {range[1]}
         </p>
       </>
-    )
+    );
   },
-}
+};
 
 export const SliderWithoutOnValueChang: Story = {
   args: {
@@ -52,4 +52,4 @@ export const SliderWithoutOnValueChang: Story = {
     max: 100,
     min: -50,
   },
-}
+};

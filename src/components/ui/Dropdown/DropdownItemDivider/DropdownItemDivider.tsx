@@ -1,5 +1,5 @@
-import s from './DropdownItemDivider.module.scss'
+import s from './DropdownItemDivider.module.scss';
 
 export const DropdownItemDivider = () => {
-  return <div className={s.dropdownItemDivider}></div>
-}
+  return <div className={s.dropdownItemDivider}></div>;
+};
