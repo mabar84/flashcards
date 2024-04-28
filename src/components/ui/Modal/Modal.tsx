@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { Cross } from '@/assets/icons/Cross';
-import { Button2 } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import { Typography } from '@/components/ui/Typography';
 import { Close, Content, Overlay, Portal, Root, Title, Trigger } from '@radix-ui/react-dialog';
 
@@ -18,9 +18,9 @@ export const Modal = (props: Props) => {
   return (
     <Root {...restProps}>
       <Trigger asChild>
-        <Button2>
+        <Button>
           <Typography.Subtitle2>{title}</Typography.Subtitle2>
-        </Button2>
+        </Button>
       </Trigger>
       <Portal>
         <Overlay className={s.overlay} />
