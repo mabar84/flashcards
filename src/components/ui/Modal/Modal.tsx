@@ -1,19 +1,19 @@
-import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react'
 
-import { Cross } from '@/assets/icons/Cross';
-import { Button } from '@/components/ui/Button';
-import { Typography } from '@/components/ui/Typography';
-import { Close, Content, Overlay, Portal, Root, Title, Trigger } from '@radix-ui/react-dialog';
+import { Cross } from '@/assets/icons/Cross'
+import { Button } from '@/components/ui/Button'
+import { Typography } from '@/components/ui/Typography'
+import { Close, Content, Overlay, Portal, Root, Title, Trigger } from '@radix-ui/react-dialog'
 
-import s from './Modal.module.scss';
+import s from './Modal.module.scss'
 
 type Props = {
-  children: ReactNode;
-  title: string;
-} & ComponentPropsWithoutRef<typeof Root>;
+  children: ReactNode
+  title: string
+} & ComponentPropsWithoutRef<typeof Root>
 
 export const Modal = (props: Props) => {
-  const { children, title, ...restProps } = props;
+  const { children, title, ...restProps } = props
 
   return (
     <Root {...restProps}>
@@ -37,5 +37,5 @@ export const Modal = (props: Props) => {
         </Content>
       </Portal>
     </Root>
-  );
-};
+  )
+}

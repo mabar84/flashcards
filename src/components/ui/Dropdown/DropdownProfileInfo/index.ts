@@ -1,1 +1,1 @@
-export { DropdownProfileInfo } from './DropdownProfileInfo';
+export { DropdownProfileInfo } from './DropdownProfileInfo'

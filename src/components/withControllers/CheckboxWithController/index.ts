@@ -1,1 +1,1 @@
-export * from './CheckboxWithController';
+export * from './CheckboxWithController'

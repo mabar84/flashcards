@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react'
 
-import { Table } from '.';
-import { Typography } from '../Typography';
-import { TableBody } from './TableBody';
-import { TableCell } from './TableCell';
-import { TableHead } from './TableHead';
-import { TableHeadCell } from './TableHead/TableHeadCell';
-import { TableRow } from './TableRow';
+import { Table } from '.'
+import { Typography } from '../Typography'
+import { TableBody } from './TableBody'
+import { TableCell } from './TableCell'
+import { TableHead } from './TableHead'
+import { TableHeadCell } from './TableHead/TableHeadCell'
+import { TableRow } from './TableRow'
 
 const meta = {
   component: Table,
   tags: ['autodocs'],
   title: 'Components/Table',
-} satisfies Meta<typeof Table>;
+} satisfies Meta<typeof Table>
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const BaseTable: Story = {
   args: {},
@@ -56,6 +56,6 @@ export const BaseTable: Story = {
           </TableRow>
         </TableBody>
       </Table>
-    );
+    )
   },
-};
+}

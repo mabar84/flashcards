@@ -1,5 +1,5 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
-import { NewPasswordFormSchema } from './NewPasswordFormShema';
+import { NewPasswordFormSchema } from './NewPasswordFormShema'
 
-export type NewPasswordFormValues = z.infer<typeof NewPasswordFormSchema>;
+export type NewPasswordFormValues = z.infer<typeof NewPasswordFormSchema>

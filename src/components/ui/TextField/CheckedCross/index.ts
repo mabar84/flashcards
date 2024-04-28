@@ -1,1 +1,1 @@
-export { CheckedCross } from './CheckedCross';
+export { CheckedCross } from './CheckedCross'

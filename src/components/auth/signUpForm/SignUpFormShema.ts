@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
 export const SignUpFormSchema = z
   .object({
@@ -12,10 +12,10 @@ export const SignUpFormSchema = z
         code: z.ZodIssueCode.custom,
         message: 'Passwords do not match',
         path: ['passwordConfirmation'],
-      });
+      })
     }
 
-    return data;
-  });
+    return data
+  })
 
-export type SignUpFormValues = z.infer<typeof SignUpFormSchema>;
+export type SignUpFormValues = z.infer<typeof SignUpFormSchema>

@@ -1,1 +1,1 @@
-export { EyeOff } from './EyeOff';
+export { EyeOff } from './EyeOff'

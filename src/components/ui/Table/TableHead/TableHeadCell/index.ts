@@ -1,1 +1,1 @@
-export { TableHeadCell } from './TableHeadCell';
+export { TableHeadCell } from './TableHeadCell'
