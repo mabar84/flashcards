@@ -1,7 +1,9 @@
-import type { Preview } from '@storybook/react'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/700.css'
-import '../src/styles/index.scss'
+import '@/styles/index.scss';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/700.css';
+
+import type { Preview } from '@storybook/react';
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -11,7 +13,20 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      default: 'dark',
+      values: [
+        {
+          name: 'dark',
+          value: '#000000',
+        },
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+      ],
+    },
   },
-}
+};
 
-export default preview
+export default preview;
