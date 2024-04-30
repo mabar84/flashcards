@@ -11,7 +11,7 @@ export const baseApi = createApi({
   endpoints: builder => {
     return {
       getDecks: builder.query<any, void>({
-        query: () => `v1/decks`,
+        query: () => `v2/decks`,
       }),
     };
   },

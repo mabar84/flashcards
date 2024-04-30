@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
 } from 'react-router-dom';
 
-import { useGetDecksQuery } from '@/services/base-api';
+import { Decks } from '@/pages/decks';
 
 const publicRoutes: RouteObject[] = [
   {
@@ -17,7 +17,7 @@ const publicRoutes: RouteObject[] = [
 
 const privateRoutes: RouteObject[] = [
   {
-    element: <div>hello</div>,
+    element: <Decks />,
     path: '/',
   },
 ];
@@ -31,10 +31,6 @@ const router = createBrowserRouter([
 ]);
 
 export const Router = () => {
-  const result = useGetDecksQuery();
-
-  console.log(result);
-
   return <RouterProvider router={router} />;
 };
 
