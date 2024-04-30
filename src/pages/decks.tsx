@@ -9,7 +9,7 @@ export const Decks = () => {
 
   return (
     <div>
-      {data.items.map(el => (
+      {data.items.map((el: any) => (
         <p key={el.id}>{el.name}</p>
       ))}
     </div>
